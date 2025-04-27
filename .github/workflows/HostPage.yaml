@@ -40,6 +40,8 @@ jobs:
       - name: Check npm version
         run: | 
           node -v
+      - name: I dont even know what I am doing
+        run: npx msw init .
       - name: Build
         run: npm run build
       - name: Setup Pages
