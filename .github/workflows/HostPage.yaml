@@ -38,7 +38,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Check npm version
-        run: npm -v
+        run: | 
+          npm -v
+          npm install npm@latest
+          npm -v
       - name: Build
         run: npm run build
       - name: Setup Pages
