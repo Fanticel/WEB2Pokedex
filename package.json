@@ -6,7 +6,7 @@
   "homepage": "WEB2Pokedex",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --base=/WEB2Pokedex/",
+    "build": "vite build --base=/WEB2Pokedex/",
     "preview": "vite preview",
     "test": "vitest",
     "test-e2e": "pm2 start \"yarn run-mock-server\" --name server && yarn playwright test",
