@@ -41,7 +41,7 @@ jobs:
         run: | 
           node -v
       - name: I dont even know what I am doing
-        run: npx msw init .
+        run: npx msw init .. -y
       - name: Build
         run: npm run build
       - name: Setup Pages
