@@ -35,7 +35,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
           <QueryClientProvider client={queryClient}>
             {import.meta.env.DEV && <ReactQueryDevtools />}
             <Notifications />
-            <AuthLoader
+            <AuthLoader 
               renderLoading={() => (
                 <div className="flex h-screen w-screen items-center justify-center">
                   <Spinner size="xl" />

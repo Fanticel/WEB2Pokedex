@@ -1,6 +1,6 @@
 import { QueryClient, useQueryClient } from '@tanstack/react-query';
 import { useMemo } from 'react';
-import { createBrowserRouter } from 'react-router';
+import { createBrowserRouter, DOMRouterOpts } from 'react-router';
 import { RouterProvider } from 'react-router/dom';
 
 import { paths } from '@/config/paths';
@@ -41,34 +41,33 @@ export const createAppRouter = (queryClient: QueryClient) =>
           path: paths.app.about.path,
           lazy: () => import('./routes/app/about').then(convert(queryClient)),
         },
-        {
-          path: paths.app.discussion.path,
-          lazy: () =>
-            import('./routes/app/discussions/discussion').then(
-              convert(queryClient),
-            ),
-        },
-        {
-          path: paths.app.users.path,
-          lazy: () => import('./routes/app/users').then(convert(queryClient)),
-        },
-        {
-          path: paths.app.profile.path,
-          lazy: () => import('./routes/app/profile').then(convert(queryClient)),
-        },
-        {
-          path: paths.app.dashboard.path,
-          lazy: () =>
-            import('./routes/app/dashboard').then(convert(queryClient)),
-        },
+        // {
+        //   path: paths.app.discussion.path,
+        //   lazy: () =>
+        //     import('./routes/app/discussions/discussion').then(
+        //       convert(queryClient),
+        //     ),
+        // },
+        // {
+        //   path: paths.app.users.path,
+        //   lazy: () => import('./routes/app/users').then(convert(queryClient)),
+        // },
+        // {
+        //   path: paths.app.profile.path,
+        //   lazy: () => import('./routes/app/profile').then(convert(queryClient)),
+        // },
+        // {
+        //   path: paths.app.dashboard.path,
+        //   lazy: () =>
+        //     import('./routes/app/dashboard').then(convert(queryClient)),
+        // },
       ],
     },
     {
       path: '*',
       lazy: () => import('./routes/not-found').then(convert(queryClient)),
     },
-  ]);
-
+  ],{basename: '/WEB2Pokedex/'});
 export const AppRouter = () => {
   const queryClient = useQueryClient();
 
