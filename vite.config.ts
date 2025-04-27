@@ -6,7 +6,8 @@ import { defineConfig } from 'vite';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  base: './',
+  // base: './',
+  base: '/WEB2Pokedex/',
   plugins: [react(), viteTsconfigPaths()],
   server: {
     port: 3000,

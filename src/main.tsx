@@ -5,6 +5,8 @@ import './index.css';
 import { App } from './app';
 import { enableMocking } from './testing/mocks';
 
+
+
 const root = document.getElementById('root');
 if (!root) throw new Error('No root element found');
 
